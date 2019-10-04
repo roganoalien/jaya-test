@@ -1,0 +1,19 @@
+{
+  "name": "jaya",
+  "version": "1.0.0",
+  "description": "Proyecto de prueba como desarrollador Nodejs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roganoalien/jaya-test.git"
+  },
+  "author": "@roganoalien",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/roganoalien/jaya-test/issues"
+  },
+  "homepage": "https://github.com/roganoalien/jaya-test#readme"
+}
