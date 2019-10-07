@@ -2,50 +2,9 @@ extends ../layout-admin.pug
 
 block content
 	include ../nav-admin.pug
-	include ../left-nav-admin.pug
 	div(class="container w-full flex flex-wrap mx-auto px-2 pt-8 lg:pt-16 mt-16")
-		+left-menu(true, false, false)
-		div(class="w-full lg:w-4/5 p-8 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white border border-gray-400 border-rounded shadow-xl flex flex-wrap")
+		div(class="w-full p-8 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white border border-gray-400 border-rounded shadow-xl flex flex-wrap")
 			h1.title(class="w-full px-2 mb-4 text-xl font-bold uppercase text-gray-600") Dashboard
 			h2.subtitle(class="w-full px-2 mb-4 text-lg font-bold text-gray-500") Información General
-			div(class="w-full sm:w-6/12 lg:w-4/12 xl:w-4/12 px-2 mb-4")
-				.border.border-gray-400.bg-white.rounded-b.flex.flex-col.justify-between.leading-normal.p-4
-					div
-						p.text-sm.text-gray-500.flex.items-center Usuarios Registrados hoy
-						if usersToday
-							p.text-admin-active.font-bold.text-2xl=usersToday
-						else
-							p.text-admin-active.font-bold.text-2xl 0
-			div(class="w-full sm:w-6/12 lg:w-4/12 xl:w-4/12 px-2 mb-4")
-				.border.border-gray-400.bg-white.rounded-b.flex.flex-col.justify-between.leading-normal.p-4
-					div
-						p.text-sm.text-gray-500.flex.items-center Usuarios del Mes
-						if usersMonth
-							p.text-admin-active.font-bold.text-2xl=usersMonth
-						else
-							p.text-admin-active.font-bold.text-2xl 0
-			div(class="w-full sm:w-6/12 lg:w-4/12 xl:w-4/12 px-2 mb-4")
-				.border.border-gray-400.bg-white.rounded-b.flex.flex-col.justify-between.leading-normal.p-4
-					div
-						p.text-sm.text-gray-500.flex.items-center Todos los usuarios registrados
-						if usersTotal
-							p.text-admin-active.font-bold.text-2xl=usersTotal
-						else
-							p.text-admin-active.font-bold.text-2xl 0
 			div.w-full
-			if works
-				each work in works
-					.admin-card-item.w-full.mb-4.px-2(class="lg:max-w-full lg:flex sm:w-full md:w-6/12")
-						.bg-img.h-48(class="lg:h-auto lg:w-48 flex-none rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden", style=`background: url(${work.background}) no-repeat center;`)
-						div(class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal")
-							.mb-8
-								p.subtitle-intel(class="text-sm text-gray-600 flex items-center")
-									<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><title>folder</title><g><g id="48x48/USER-INTERFACE/folder" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="folder"><g id="Bounding_Boxes"><path id="Shape" d="M0 0h48v48H0z"></path></g><path d="M36 39.721V22h2.952C41.74 22 44 24.239 44 27c0 .87-.23 1.725-.665 2.48l-4.615 8A5.036 5.036 0 0 1 36 39.722zM36 26v8.134l3.829-6.638a.993.993 0 0 0 .133-.496c0-.552-.452-1-1.01-1H36z" id="c2/folder" fill="#FB77AF" fill-rule="nonzero"></path><path d="M36 39.721a5.086 5.086 0 0 1-1.662.279H6.8A2.8 2.8 0 0 1 4 37.2V10.8A2.8 2.8 0 0 1 6.8 8h14.232a2.8 2.8 0 0 1 2.228 1.103L25.467 12H33.2a2.8 2.8 0 0 1 2.8 2.8v24.921zM24.872 16a2.8 2.8 0 0 1-2.227-1.103L20.438 12H8v24h24V16h-7.128z" id="c1/folder" fill="#f92a82" fill-rule="nonzero"></path></g></g></g></svg>
-									span=work.subtitle
-								div(class="text-gray-900 font-bold text-xl mb-2")=work.title
-								p.description(class="text-gray-700 text-base")=work.description
-							.flex.items-center.justify-start.edition
-								a(href=`/admin/borrar/${work._id}`)
-									<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><title>delete</title><g><g id="48x48/CAMERA/delete" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="delete"><g id="Bounding_Boxes"><path id="Shape" d="M0 0h48v48H0z"></path></g><path d="M20 22a2 2 0 0 1 2 2v8a2 2 0 1 1-4 0v-8a2 2 0 0 1 2-2zm8 0a2 2 0 0 1 2 2v8a2 2 0 1 1-4 0v-8a2 2 0 0 1 2-2z" id="c2/delete" fill="#FB77AF"></path><path d="M10.8 12h26.4a.8.8 0 0 1 .8.8V40a4 4 0 0 1-4 4H14a4 4 0 0 1-4-4V12.8a.8.8 0 0 1 .8-.8zm3.2 4.8v22.4a.8.8 0 0 0 .8.8h18.4a.8.8 0 0 0 .8-.8V16.8a.8.8 0 0 0-.8-.8H14.8a.8.8 0 0 0-.8.8zm0-11.6A1.2 1.2 0 0 1 15.2 4h17.6A1.2 1.2 0 0 1 34 5.2a.8.8 0 0 0 .8.8H38a2 2 0 1 1 0 4H10a2 2 0 1 1 0-4h3.2a.8.8 0 0 0 .8-.8z" id="c1/delete" fill="#f92a82"></path></g></g></g></svg>
-								a(href=`/admin/editar/${work._id}`)
-									<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><title>edit</title><g><g id="48x48/TEXT-EDITING/edit" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="edit"><g id="Bounding_Boxes"><path id="Shape" d="M0 0h48v48H0z"></path></g><path d="M38.228 6.22l5.553 5.552a.748.748 0 0 1 0 1.058l-1.587 1.587a.748.748 0 0 1-1.057 0l-5.554-5.554a.748.748 0 0 1 0-1.057l1.587-1.587a.748.748 0 0 1 1.058 0z" id="c2/edit" fill="#FB77AF"></path><path d="M40 21.714a2 2 0 1 1 4 0V36a6 6 0 0 1-6 6H10a6 6 0 0 1-6-6V12a6 6 0 0 1 6-6h18.5a2 2 0 1 1 0 4H10a2 2 0 0 0-2 2v24a2 2 0 0 0 2 2h28a2 2 0 0 0 2-2V21.714zM34.526 10.45l5.024 5.024a1.122 1.122 0 0 1 0 1.587L23.442 33.169c-.186.185-.43.3-.692.324l-5.527.502a1.122 1.122 0 0 1-1.218-1.219l.502-5.526c.024-.262.138-.506.324-.692L32.939 10.45a1.122 1.122 0 0 1 1.587 0zM21.564 29.76L34.79 16.532a.374.374 0 0 0 0-.529l-.793-.793a.374.374 0 0 0-.53 0L20.242 28.436a.374.374 0 0 0-.108.231l-.079.873a.374.374 0 0 0 .406.406l.873-.08a.374.374 0 0 0 .23-.107z" id="c1/edit" fill="#f92a82"></path></g></g></g></svg>
+				p.w-full Token

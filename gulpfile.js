@@ -24,27 +24,7 @@ const $cssVendorsFolder = './public/css/vendors',
 	$cssAdminVendors = [$tailwind, $notyfCSS],
 	$jsVendorsFolder = './public/js/vendors',
 	$notyfJS = './node_modules/notyf/notyf.min.js',
-	$editorJS = './node_modules/@editorjs/editorjs/dist/editor.js',
-	$code = './node_modules/@editorjs/code/dist/bundle.js',
-	$delimiter = './node_modules/@editorjs/delimiter/dist/bundle.js',
-	$embed = './node_modules/@editorjs/embed/dist/bundle.js',
-	$header = './node_modules/@editorjs/header/dist/bundle.js',
-	$inlineCode = './node_modules/@editorjs/inline-code/dist/bundle.js',
-	$quote = './node_modules/@editorjs/quote/dist/bundle.js',
-	$simpleImage = './node_modules/@editorjs/simple-image/dist/bundle.js',
-	$table = './node_modules/@editorjs/table/dist/bundle.js',
-	$jsVendors = [
-		$notyfJS,
-		$editorJS,
-		$code,
-		$embed,
-		$header,
-		$quote,
-		$simpleImage,
-		$table,
-		$delimiter,
-		$inlineCode
-	];
+	$jsVendors = [$notyfJS];
 
 /////////////////////
 //! Error Function //
