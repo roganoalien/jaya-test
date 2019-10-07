@@ -136,21 +136,21 @@ router.get('/admin/borrar/:id', async (req, res) => {
 router.post('/admin/guardar/:id', (req, res) => {
 	const { title, subtitle, description, software, quill } = req.body;
 	const id = req.params.id;
-	Work.findById(id, (err, work) => {
-		try {
-			work.title = title;
-			work.subtitle = subtitle;
-			work.description = description;
-			work.software = software;
-			work.content = JSON.parse(quill);
-			work.save().then(() => {
-				req.flash('success', '¡Se guardó el proyecto!');
-				res.redirect(`/admin/editar/${id}`);
-			});
-		} catch (err) {
-			console.log(err);
-		}
-	});
+	// Work.findById(id, (err, work) => {
+	// 	try {
+	// 		work.title = title;
+	// 		work.subtitle = subtitle;
+	// 		work.description = description;
+	// 		work.software = software;
+	// 		work.content = JSON.parse(quill);
+	// 		work.save().then(() => {
+	// 			req.flash('success', '¡Se guardó el proyecto!');
+	// 			res.redirect(`/admin/editar/${id}`);
+	// 		});
+	// 	} catch (err) {
+	// 		console.log(err);
+	// 	}
+	// });
 });
 
 module.exports = router;
