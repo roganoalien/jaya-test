@@ -1,0 +1,77 @@
+// @import '../config/vars.color';
+#contact {
+	.map-holder {
+		@include my-shadow(0, 40px, 20px, -30px, $c-black, 0.1);
+		background: $c-white-real;
+		border: 6px solid $c-white-real;
+		height: 500px;
+		position: relative;
+		#map {
+			@include position-select(0, 0);
+			height: 100%;
+			width: 100%;
+			z-index: 1;
+		}
+		.map-intel {
+			@include position-select(0);
+			z-index: 2;
+			h3 {
+				color: $c-purple;
+				font-family: $t-black;
+				font-size: 40px;
+				margin: 0;
+				padding: 15px 25px 0;
+				position: relative;
+				text-shadow: 0 5px 10px rgba($c-black, 0.25);
+				text-transform: uppercase;
+				width: 100%;
+				span {
+					font-family: $t-light;
+				}
+				@media (max-width: 460px) {
+					font-size: 25px;
+				}
+			}
+			a {
+				@include flex-container(center, row, flex-start);
+				color: $c-pink;
+				font-family: $t-black;
+				font-size: 25px;
+				margin-bottom: 10px;
+				padding: 0 25px;
+				text-decoration: none;
+				text-transform: uppercase;
+				p {
+					transform: translateX(5px);
+					transition: transform 0.25s
+						cubic-bezier(0.175, 0.885, 0.32, 1.275);
+				}
+				svg {
+					fill: lighten($c-pink, 25%);
+					height: 40px;
+					transform: scale(1);
+					transition: transform 0.15s
+						cubic-bezier(0.175, 0.885, 0.32, 1.275);
+					width: auto;
+				}
+				&.irregular {
+					p {
+						margin-top: 5px !important;
+					}
+				}
+				&:hover {
+					p {
+						transform: translateX(15px);
+						transition-delay: 0.15s;
+					}
+					svg {
+						transform: scale(1.2);
+					}
+				}
+				@media (max-width: 460px) {
+					font-size: 18px;
+				}
+			}
+		}
+	}
+}

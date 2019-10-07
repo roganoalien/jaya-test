@@ -1,0 +1,19 @@
+.fade-animation {
+	opacity: 1;
+	transform: translateY(0);
+	transition: all 0.5s ease-in-out;
+	&.inside-animate,
+	&.viewport-container,
+	&.viewport-img {
+		opacity: 0;
+		transform: translateY(100px);
+	}
+}
+.fade-animation-two {
+	opacity: 0.15;
+	transform: scale(1);
+	&.viewport-img {
+		opacity: 0 !important;
+		transform: scale(0) !important;
+	}
+}

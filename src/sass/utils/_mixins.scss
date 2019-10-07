@@ -1,0 +1,78 @@
+// @import '../config/vars.color';
+//* //////////
+//* Flexbox //
+//* //////////
+@mixin flex-container(
+	$algin: center,
+	$direction: row,
+	$justify: center,
+	$wrap: nowrap
+) {
+	align-items: $algin;
+	display: flex;
+	flex-direction: $direction;
+	flex-wrap: $wrap;
+	justify-content: $justify;
+}
+//* //////////////////
+//* iOS Shadow Like //
+//* //////////////////
+@mixin my-shadow(
+	$x: 0,
+	$y: 25px,
+	$blur: 20px,
+	$expand: -10px,
+	$color: $c-black,
+	$alpha: 0.025
+) {
+	box-shadow: $x $y $blur $expand rgba($color, $alpha);
+}
+//* //////////////////
+//* Position Select //
+//* //////////////////
+@mixin position-select(
+	$x,
+	$y: $x,
+	$position: absolute,
+	$left: true,
+	$top: true
+) {
+	@if $left {
+		left: $x;
+	} @else {
+		right: $x;
+	}
+	position: $position;
+	@if $top {
+		top: $y;
+	} @else {
+		bottom: $y;
+	}
+	@if $position != absolute and $position != fixed {
+		@error 'Position-select can´t be `#{$position}, it needs to be absolute or fixed`';
+	}
+}
+//* ///////////////////////////
+//* IMAGE SHADOW WITH COLORS //
+//* ///////////////////////////
+@mixin shadow-img(
+	$left: 50%,
+	$bottom: -15px,
+	$blur: 20px,
+	$height: 70%,
+	$width: 80%,
+	$opacity: 0.5
+) {
+	@warn 'shadow-img can be only used with :before or :after pseudoelements, and parent should have a background with a valid url for it to work.';
+	@include position-select($left, $bottom, absolute, true, false);
+	background-image: inherit;
+	background-size: cover;
+	content: '';
+	filter: blur($blur);
+	height: $height;
+	opacity: $opacity;
+	pointer-events: none;
+	transform: translateX(-50%);
+	width: $width;
+	z-index: -1;
+}

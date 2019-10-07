@@ -1,0 +1,18 @@
+// @import '../config/vars.color';
+.btn {
+	@include my-shadow(0, 20px, 15px, -15px, $c-pink, 0.5);
+	background: $c-pink;
+	color: $c-white;
+	display: block;
+	font-family: $t-bold;
+	font-size: 18px;
+	padding: 10px 20px;
+	transition: all 0.15s ease-in-out;
+	&.small {
+		width: 151px;
+	}
+	&:hover {
+		@include my-shadow(0, 13px, 15px, -15px, $c-pink, 0.75);
+		color: darken($c-pink, 20%);
+	}
+}

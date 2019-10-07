@@ -1,0 +1,8 @@
+footer#footer {
+	p {
+		color: lighten($c-black, 50%);
+		font-family: $t;
+		font-size: 12px;
+		margin-top: 5px;
+	}
+}

@@ -1,0 +1,12 @@
+if errors
+	#alerts-holder.multiple
+		each error in errors
+			span=error.msg
+
+if error != ''
+	#alerts-holder
+		span=error
+
+if success != ''
+	#alerts-holder.success
+		span=success

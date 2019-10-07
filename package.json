@@ -1,19 +1,121 @@
 {
-  "name": "jaya",
-  "version": "1.0.0",
-  "description": "Proyecto de prueba como desarrollador Nodejs",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/roganoalien/jaya-test.git"
-  },
-  "author": "@roganoalien",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/roganoalien/jaya-test/issues"
-  },
-  "homepage": "https://github.com/roganoalien/jaya-test#readme"
+	"name": "jaya",
+	"version": "1.0.0",
+	"babel": {
+		"presets": [
+			"@babel/preset-env"
+		]
+	},
+	"browserslist": [
+		"last 2 versions",
+		"> 2%",
+		"maintained node versions",
+		"not dead"
+	],
+	"eslintConfig": {
+		"parserOptions": {
+			"ecmaVersion": 2018,
+			"sourceType": "script"
+		},
+		"extends": [
+			"eslint:recommended",
+			"prettier"
+		],
+		"env": {
+			"browser": true,
+			"commonjs": true,
+			"es6": true,
+			"node": true,
+			"jest": true,
+			"mongo": true,
+			"worker": true,
+			"amd": true
+		},
+		"rules": {
+			"no-console": "off",
+			"no-unused-vars": "warn",
+			"no-undef": "warn",
+			"no-useless-escape": "warn",
+			"no-prototype-builtins": "warn",
+			"no-fallthrough": "warn",
+			"no-func-assign": "warn",
+			"no-empty": "warn",
+			"no-self-assign": "warn",
+			"no-cond-assign": "warn",
+			"no-constant-condition": "warn",
+			"no-unsafe-finally": "warn"
+		}
+	},
+	"prettier": {
+		"tabWidth": 4,
+		"useTabs": true,
+		"semi": true,
+		"singleQuote": true,
+		"overrides": [
+			{
+				"files": "*.pug",
+				"options": {
+					"parser": "pug",
+					"singleQuote": true,
+					"tabWidth": 4,
+					"useTabs": true
+				}
+			},
+			{
+				"files": ".scss",
+				"options": {
+					"parser": "scss",
+					"singleQuote": true,
+					"tabWidth": 4,
+					"useTabs": true
+				}
+			}
+		]
+	},
+	"description": "Proyecto de prueba como desarrollador Nodejs",
+	"main": "app.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/roganoalien/jaya-test.git"
+	},
+	"author": "@roganoalien",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/roganoalien/jaya-test/issues"
+	},
+	"homepage": "https://github.com/roganoalien/jaya-test#readme",
+	"dependencies": {
+		"bcryptjs": "^2.4.3",
+		"body-parser": "^1.19.0",
+		"dotenv": "^8.1.0",
+		"express": "^4.17.1",
+		"express-session": "^1.16.2",
+		"express-validator": "^6.2.0",
+		"mongoose": "^5.7.3",
+		"morgan": "^1.9.1",
+		"multer": "^1.4.2",
+		"passport": "^0.4.0",
+		"passport-local": "^1.0.0",
+		"pug": "^2.0.4"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.6.2",
+		"@babel/preset-env": "^7.6.2",
+		"gulp": "^4.0.2",
+		"gulp-autoprefixer": "^7.0.1",
+		"gulp-babel": "^8.0.0",
+		"gulp-clean-css": "^4.2.0",
+		"gulp-concat": "^2.6.1",
+		"gulp-minify": "^3.1.0",
+		"gulp-purgecss": "^1.2.0",
+		"gulp-rename": "^1.4.0",
+		"gulp-sass": "^4.0.2",
+		"gulp-sourcemaps": "^2.6.5",
+		"gulp-uglify": "^3.0.2",
+		"nodemon": "^1.19.3",
+		"tailwindcss": "^1.1.2"
+	}
 }

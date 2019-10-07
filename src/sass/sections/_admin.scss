@@ -1,0 +1,205 @@
+// @import '../config/vars.color';
+.logo-nav-admin {
+	height: 40px;
+	margin: 10px 0;
+	width: auto;
+}
+.admin-left-nav-anchor {
+	border-color: transparent;
+	// span{
+	// 	color lighten($c-black, 35%)
+	// }
+	&:hover {
+		border-color: lighten($c-black, 50%);
+		span {
+			color: $c-pink;
+		}
+	}
+	&.active {
+		border-color: $c-pink;
+	}
+	@media (max-width: 1023px) {
+		border: none !important;
+		padding-left: 0 !important;
+		&:hover {
+			span {
+				color: #4a5568 !important;
+				opacity: 0.5;
+			}
+		}
+		&.active {
+			span {
+				color: $c-pink !important;
+				opacity: 1;
+			}
+		}
+	}
+}
+.custom-anchor-admin {
+	color: #a0aec0;
+	&:hover {
+		color: #a0aec0;
+	}
+}
+.custom-button-admin {
+	background: $c-pink !important;
+	&:hover {
+		background: darken($c-pink, 20%) !important;
+	}
+	&.border-only {
+		background: transparent;
+		border: 1px solid $c-pink;
+		color: $c-pink;
+		white-space: nowrap;
+		&:hover {
+			background: lighten($c-pink, 95%) !important;
+		}
+	}
+}
+.custom-input-admin {
+	&:focus,
+	&:active {
+		border: 1px solid $c-pink !important;
+		box-shadow: 0 0 2px $c-pink;
+	}
+}
+.no-underline {
+	text-decoration: none !important;
+}
+.text-admin-active {
+	color: $c-pink;
+}
+
+button.user-intel {
+	position: relative;
+	img {
+		opacity: 0.5;
+	}
+	span {
+		color: lighten($c-black, 50%);
+	}
+	.floating-block {
+		@include my-shadow(0, 20px, 12px, -10px, darken(#e2e8f0, 10%), 0.25);
+		@include position-select(50%, 0);
+		background: white;
+		border: 1px solid rgba(darken(#e2e8f0, 50%), 0.25);
+		margin-top: 65px;
+		max-height: 0px;
+		overflow: hidden;
+		transform: translate(-50%, -35px);
+		transition: all 0.25s ease-in-out;
+		width: 100%;
+		z-index: -1;
+		ul {
+			li {
+				width: 100%;
+				a {
+					color: lighten($c-black, 50%);
+					display: block;
+					padding: 10px 5px;
+					text-decoration: none;
+					width: 100%;
+					&:hover {
+						background: rgba(#e2e8f0, 0.25);
+						// color $c-black
+					}
+				}
+			}
+		}
+	}
+	&:hover {
+		.floating-block {
+			@include position-select(50%, 0);
+			max-height: 100px;
+			opacity: 1;
+			pointer-events: auto;
+			z-index: 20;
+		}
+	}
+}
+
+.table-body-users {
+	tr {
+		&:nth-child(even) {
+			background: #f7fafc !important;
+		}
+	}
+}
+
+.table-users {
+	.user {
+		&:nth-child(even) {
+			td {
+				background: #f7fafc;
+			}
+		}
+	}
+}
+
+.admin-form {
+	label {
+		font-family: $t-black;
+	}
+	.inputFile {
+		cursor: pointer;
+		min-height: 144px;
+		position: relative;
+		p {
+			color: $c-black;
+			font-family: $t-black;
+			opacity: 0.75;
+		}
+		svg {
+			height: 40px;
+			opacity: 0.75;
+			width: auto;
+		}
+		&:focus,
+		&:active {
+			border: 1px solid $c-pink;
+		}
+		.bg-emulate {
+			@include position-select(0, 0);
+			height: 100%;
+			opacity: 0.25;
+			width: 100%;
+		}
+	}
+	input:disabled {
+		background: rgba($c-black, 0.05);
+		color: rgba($c-black, 0.3);
+		cursor: not-allowed;
+	}
+}
+
+.admin-card-item {
+	.bg-img {
+		background-size: cover !important;
+	}
+	.subtitle-intel {
+		svg {
+			height: 20px;
+			margin-right: 5px;
+			width: auto;
+		}
+	}
+	.edition {
+		a {
+			margin-right: 20px;
+		}
+		svg {
+			height: 30px;
+			width: auto;
+		}
+	}
+	.description {
+		font-size: 13px;
+	}
+}
+
+nav.fixed {
+	z-index: 1100;
+}
+.codex-editor {
+	border: 1px solid rgba($c-black, 0.25) !important;
+}

@@ -1,0 +1,49 @@
+#detail {
+	h3 {
+		font-size: 30px;
+	}
+}
+
+.detail-content {
+	a {
+		box-shadow: inset 0 -0.1em 0 $c-pink;
+		padding: 0 0.25em;
+		transition: all 0.25s ease;
+		&:hover {
+			box-shadow: inset 0 -1.1em 0 $c-pink;
+			color: $c-white;
+		}
+	}
+	img {
+		height: auto;
+		margin: 1em auto;
+		max-width: 700px;
+		width: auto;
+		@media (max-width: 750px) {
+			width: 100%;
+		}
+	}
+	p {
+		margin: 1em auto;
+		max-width: 700px;
+		b {
+			color: $c-purple !important;
+			display: inline-block;
+			font-family: $t-black !important;
+		}
+	}
+	img + p {
+		font-size: 14px;
+		padding: 0 2em;
+		text-align: center;
+	}
+	.header-h3 {
+		color: $c-black;
+		font-family: $t-black;
+		font-size: 14px !important;
+		letter-spacing: 5px;
+		margin: 2em 0 1em;
+		text-transform: uppercase;
+		text-align: center;
+	}
+}

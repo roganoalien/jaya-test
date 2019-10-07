@@ -1,0 +1,22 @@
+// @import '../config/vars.color';
+#brands {
+	.brand-item {
+		@include flex-container();
+		img {
+			filter: grayscale(100%);
+			opacity: 0.15;
+			transform: scale(1);
+			transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+			&:hover {
+				filter: grayscale(0);
+				opacity: 1;
+				transform: scale(1.1);
+			}
+		}
+	}
+	.section-title {
+		&:after {
+			content: 'con las que he colaborado';
+		}
+	}
+}

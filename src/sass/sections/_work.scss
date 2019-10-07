@@ -1,0 +1,85 @@
+// @import '../config/vars.color';
+#work {
+	// height: 100vh;
+	.work-item {
+		a.w-full {
+			position: relative;
+			.fake-image-item-holder {
+				background-size: cover !important;
+				border: 1px solid rgba($c-black, 0.1);
+				padding-top: 60%;
+				position: relative;
+				width: 100%;
+				&:before {
+					@include shadow-img(50%, -8px, 10px, 70%, 80%, 0.75);
+					transition: all 0.15s ease;
+				}
+			}
+			.item-intel-card {
+				@include position-select(0, 0);
+				height: 100%;
+				overflow: hidden;
+				width: 100%;
+				z-index: 2;
+				.card-bg {
+					@include position-select(0, 0);
+					background: linear-gradient(
+						108deg,
+						rgba($c-purple, 1) 86%,
+						rgba($c-purple, 0) 86%
+					);
+					height: 100%;
+					opacity: 0;
+					transition: all 0.25s ease-in-out;
+					transform: translateX(-120%);
+					width: 120%;
+					z-index: 1;
+				}
+				.card-box {
+					@include position-select(50%, 50%);
+					@include my-shadow(0, 30px, 20px, -15px, $c-black, 0.25);
+					background: $c-black;
+					padding: 15px 30px;
+					transform: translate(-50%, -50%) skew(-10deg) rotate(-10deg)
+						scale(1);
+					transition: all 0.25s
+						cubic-bezier(0.175, 0.885, 0.32, 1.275);
+					z-index: 2;
+					h3 {
+						color: $c-white;
+						font-family: $t-black;
+						font-size: 25px;
+						line-height: 1;
+						text-align: center;
+						text-transform: uppercase;
+					}
+					p {
+						color: $c-white;
+						font-family: $t-light;
+						font-size: 18px;
+						line-height: 1;
+						text-align: center;
+						text-transform: uppercase;
+					}
+				}
+			}
+			&:hover {
+				.card-bg {
+					opacity: 0.9;
+					transform: translateX(0);
+				}
+				.card-box {
+					transform: translate(-50%, -50%) skew(-10deg) rotate(0)
+						scale(1.2);
+					transition-delay: 0.15s;
+				}
+				.fake-image-item-holder {
+					&:before {
+						bottom: 0;
+						opacity: 0.5;
+					}
+				}
+			}
+		}
+	}
+}

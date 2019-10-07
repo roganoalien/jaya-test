@@ -1,0 +1,23 @@
+// @import '../config/vars.color';
+#about {
+	height: auto;
+	padding: 50px 0;
+	position: relative;
+	.about-article-content {
+		height: auto;
+	}
+}
+.img {
+	.img-bg {
+		background-size: cover !important;
+		border-radius: 50%;
+		height: auto;
+		padding-top: 80%;
+		position: relative;
+		width: 80%;
+		&:before {
+			@include shadow-img();
+			border-radius: 50%;
+		}
+	}
+}
