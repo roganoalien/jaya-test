@@ -9,9 +9,8 @@ const bodyParser = require('body-parser'),
 	session = require('express-session');
 
 const { config } = require('./src/config/config-app'),
-	adminRoutes = require('./src/routes/route-admin'),
-	mainRoutes = require('./src/routes/route-main'),
-	userRoutes = require('./src/routes/route-user');
+	adminRoutes = require('./src/routes/routes-admin'),
+	mainRoutes = require('./src/routes/routes-main');
 
 const app = express();
 require('./src/config/config-db');
@@ -39,11 +38,11 @@ app.use((req, res, next) => {
 	next();
 });
 app.use('/public', express.static(path.join(__dirname, 'public')));
+app.use('/assets', express.static(path.join(__dirname, 'assets')));
 app.use(bodyParser.urlencoded({ extended: true }));
 //-- Routes
 app.use(mainRoutes);
 app.use(adminRoutes);
-app.use(userRoutes);
 const server = app.listen(app.get('port'), function() {
 	console.log(`Listening http://localhost:${server.address().port}`);
 });
